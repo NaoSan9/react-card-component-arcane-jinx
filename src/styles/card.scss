@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+$primary-font: 'Vollkorn', serif;
+$secondary-font: 'Varela Round', sans-serif;
+$color-1: #F554D1;
+$color-2: #7978FF;
+$color-3: #4649FF;
+$color-4: #1D1CE5;
+$text-color: rgb(19, 19, 19);
+
+
+.cardSection {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem 8rem;
+    width: 100%;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        border-radius: 1.4rem;
+        box-shadow: 1rem 1rem 2rem rgba(70, 73, 255, 0.5);
+        width: 30rem;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        // opacity: 0.4;
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 20rem;
+            overflow: hidden;
+
+            img {
+                width: auto;
+                height: 100%;
+            }
+
+            .logo {
+                position: relative;
+                bottom: 3.5rem;
+            }
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            color: $text-color;
+            padding: 1rem 2rem 2rem 2rem;
+
+            .tagSection {
+                display: flex;
+                gap: 1.4rem;
+                justify-content: flex-start;
+
+                .tagDetail {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 0.6rem;
+                    align-items: baseline;
+                    font-family: $secondary-font;
+                    font-size: 0.9rem;
+
+                    .tag {
+                        padding: 0.4rem 0.8rem;
+                        background-color: $color-2;
+                        border-radius: 2rem;
+                        color: white;
+                        font-size: 0.9rem;
+                    }
+
+                }
+            }
+
+            .shortBiography {
+                font-size: 1rem;
+                font-family: $primary-font;
+                font-weight: 400;
+            }
+
+            .quote {
+                margin: 1rem 0rem 0rem 0rem;
+                padding: 1rem 3rem;
+                background-color: rgba(121, 120, 255, 0.1);
+                border-radius: 1rem;
+
+                h2 {
+                    text-align: center;
+                    font-style: italic;
+                    color: $color-3;
+
+                    span {
+                        font-weight: 700;
+                        text-align: center;
+                        font-family: $primary-font;
+                        font-size: 1rem;
+                        font-style: normal;
+                        color: $text-color;
+                    }
+                }
+
+            }
+
+        }
+
+
+
+
+
+    }
+
+    .animatedBorder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: black;
+        border-radius: 1.6rem;
+        width: 31rem;
+        height: 48.2rem;
+        overflow: hidden;
+        position: absolute;
+        left: 10rem;
+        z-index: -5;
+
+        ::after {
+            content: '';
+            position: absolute;
+            left: -17.5rem;
+            top: -8rem;
+            width: 65rem;
+            height: 65rem;
+            background-image: conic-gradient(transparent, transparent, transparent, $color-2);
+            animation: Border 2s linear infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes Border {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        ::before {
+            content: '';
+            position: absolute;
+            left: -17.5rem;
+            top: -8rem;
+            width: 65rem;
+            height: 65rem;
+            background-image: conic-gradient(transparent, transparent, transparent, $color-1);
+            animation: Border 2s linear infinite;
+        }
+
+        @keyframes Border {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        span {
+            position: absolute;
+            inset: 0.5rem;
+            border-radius: 1.4rem;
+            background-color: black;
+            z-index: 1;
+        }
+
+    }
+
+    .graff {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+
+        .graff1 {
+            position: absolute;
+            width: 22rem;
+            height: auto;
+            left: -14rem;
+            top: 4rem;
+            animation: Neon 0.1s ease-in-out 1s infinite;
+
+            @keyframes Neon {
+                0% {
+                    opacity: 0.9;
+                }
+
+                50% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .graff2 {
+            position: relative;
+            width: 25rem;
+            height: auto;
+            left: 20rem;
+            top: 28rem;
+            animation: Neon 2s ease-in-out 1s infinite;
+
+            @keyframes Neon {
+                0% {
+                    opacity: 0.8;
+                }
+
+                25% {
+                    opacity: 1;
+                }
+
+                50% {
+                    opacity: 0.8;
+                }
+
+                75% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
