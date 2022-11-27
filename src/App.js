@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Card from './components/Card';
-import video from "./assets/arcane-opening.webm"
-import audio from "./assets/arcane-opening.mp3"
+import video from "./assets/arcane-opening.webm";
+import audio from "./assets/arcane-opening.mp3";
+import image from "./assets/arcane-image-background.jpeg";
 import './styles/app.scss';
 
 
@@ -27,6 +28,7 @@ function App() {
         <video autoPlay loop muted>
           <source src={video} type="video/webm" />
         </video>
+        <img className='imageBackground' src={image} alt="Arcane Background" />
         <div className='audio'>
           <audio controls autoPlay={true} loop id='audio'>
             <source src={audio} type="audio/mp3" />
